@@ -42,6 +42,7 @@ public class AdditionController implements Initializable {
                 addBtn.setDisable(insertWordExpl.getText().isEmpty() || insertWordTarget.getText().isEmpty());
             }
         });
+        successAlert.setVisible(false);
     }
     @FXML
     private void handleClickAddBtn() {
@@ -93,6 +94,7 @@ public class AdditionController implements Initializable {
             // reset input
             addBtn.setDisable(true);
             resetInput();
+
         } else if (option.get() == ButtonType.CANCEL) {
             alerts.showAlertInfo("Information" , "Thay đổi không được công nhận.");
         }
