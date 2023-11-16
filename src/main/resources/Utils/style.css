@@ -12,6 +12,13 @@
     -fx-background-radius: 5;
     -fx-border-radius: 5;
 }
+.container-dropshadow{
+    -fx-background-color:  #fff;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 0);
+}
 .menu{
     -fx-padding: 0;
 }
@@ -35,6 +42,13 @@
     -fx-border-radius: 30;
     -fx-effect: dropshadow(three-pass-box, #737272, 15, 0, 0, 2) ;
 }
+.search-box-add {
+    -fx-background-color: #fff;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-border-color: #2a4878;
+}
+
 .search-field{
   -fx-background-color: transparent;
   -fx-text-fill: #d1d8e0;
@@ -61,15 +75,15 @@
 }
 .explanation-field{
     -fx-background-color: transparent;
-    -fx-background-radius: 5;
+    -fx-background-radius: 0;
     -fx-border-radius: 5;
     -fx-border-width: 0;
-    -fx-text-fill: #9f45b0;
+    -fx-text-fill: #2a4878;
     -fx-font-size: 16px;
 }
 .explanation-menu{
     -fx-border-color: #966FBD;
-    -fx-border-width: 0 0 2 0;
+    -fx-border-width: 0 0 0 0;
 }
 .edit-button, .delete-button,
 .volume-button{
@@ -108,10 +122,16 @@
 /*title*/
 .title{
      -fx-background-color:   #fff;
-     -fx-effect: dropshadow(three-pass-box, #737272, 10, 0, 0, 0);
+     -fx-effect: dropshadow(three-pass-box, #737272, 2, 0, 0, 0);
      -fx-background-radius: 5;
      -fx-border-radius: 5;
 }
+.title-no-corner{
+     -fx-background-color:   #fff;
+     -fx-effect: dropshadow(three-pass-box, #737272, 10, 0, 0, 0);
+
+}
+
 
 /* Styling list-cell */
 .list-cell{
@@ -120,7 +140,7 @@
     -fx-font-weight: 700;
     -fx-padding: 5;
     -fx-background-color: -fx-box-border, -fx-control-inner-background;
-    fx-effect: dropshadow(three-pass-box, #737272, 10, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, #737272, 2, 0, 0, 0);
      -fx-background-radius: 5;
      -fx-border-radius: 5;
 }
@@ -147,7 +167,7 @@
     -fx-background-color:transparent;
     -fx-border-color:transparent;
     -fx-background-radius: 0em;
-    -fx-border-radius:2em;
+    -fx-border-radius:0em;
 }
 .list-cell .scroll-bar:vertical .increment-button ,
 .list-cell .scroll-bar:vertical .decrement-button ,
@@ -184,8 +204,8 @@
 /* styling add new word component */
 .english-word-input,
 .meaning-input{
-    -fx-text-fill: #9f45b0;
-    -fx-border-color: #966FBD;
+    -fx-text-fill: #2a4878;
+    -fx-border-color: #2a4878;
     -fx-font-size: 14px;
     -fx-border-width: 1.5;
     -fx-background-radius: 5;
@@ -197,7 +217,7 @@
     -fx-background-radius: 5px;
     -fx-font-size: 13px;
     -fx-font-weight: 700;
-    -fx-background-color: linear-gradient(to bottom left, #44008b, #9f45b0);
+    -fx-background-color: linear-gradient(to bottom left, #2a4878, #637a9f);
     -fx-pref-width: 100px;
     -fx-pref-height: 30px;
 }
