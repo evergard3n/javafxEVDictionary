@@ -42,7 +42,7 @@ public class Word {
     @Override
     public String toString() {
         return word_Target
-                +"  |   "
+                +"  "
                 + word_explain;
     }
 }

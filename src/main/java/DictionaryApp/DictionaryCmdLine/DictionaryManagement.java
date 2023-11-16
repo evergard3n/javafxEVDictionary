@@ -147,7 +147,7 @@ public class DictionaryManagement  {
             while (scnF.hasNextLine()) {
                 String line = scnF.nextLine();
 
-                String[] stack = line.split("\t");
+                String[] stack = line.split("[ \\t]+");
                 if(stack.length == 2) {
                     Word newWord = new Word(stack[0],stack[1]);
                     dictionary.add(newWord);

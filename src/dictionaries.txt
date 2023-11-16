@@ -1,3 +1,34 @@
-kia	o cua so mo toang
-doremon	chu meo may den tu tuong lai
-vk tui	arya
+Beach	Biển
+Bird	Chim
+Boat	Thuyền
+Book	Sách
+Butterfly	Bướm
+Butterfly	Bướm
+Cat	Mèo
+Chair	Ghế
+Dog  Chó
+Door  Cửa
+Flower  Hoa
+Hat  Mũ
+Hat  Mũ
+House  Nhà
+Mountain  Núi
+Music  Nhạc
+Paper  Giấy
+Pen  Bút
+Rain  Mưa
+River  Sông
+Shoes  Giày
+Sunshine  Nắng
+Table  Bàn
+Taxi  Taxi
+Ticket  Vé
+Tree  Cây
+Water  Nước
+adu  ae
+e  e
+q  q
+r  r
+t  t
+w  w
+y  y

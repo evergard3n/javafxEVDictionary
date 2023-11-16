@@ -62,6 +62,8 @@ public class SearchController implements Initializable{
                 searchTerm.clear();
                 notAvailableAlert.setVisible(false);
                 cancelBtn.setVisible(false);
+                list.clear();
+                listResults.setItems(list);
                 setListDefault(0);
             }
         });
@@ -79,6 +81,7 @@ public class SearchController implements Initializable{
         if (list.isEmpty()) {
             notAvailableAlert.setVisible(true);
             setListDefault(firstIndexOfListFound);
+//            setListDefault(0);
         } else {
             notAvailableAlert.setVisible(false);
             headerList.setText("Kết quả");
@@ -171,7 +174,9 @@ public class SearchController implements Initializable{
         }
         list.clear();
         for (int i = index; i < index + 15; i++) {
-            list.add(dictionary.get(i).getWord_Target());
+
+           list.add(dictionary.get(i).getWord_Target());
+
         }
         listResults.setItems(list);
         englishWord.setText(dictionary.get(index).getWord_Target());

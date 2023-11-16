@@ -15,8 +15,11 @@ import DictionaryApp.DictionaryCmdLine.*;
 public class AdditionController implements Initializable {
     @FXML
     private Button addBtn;
+    @FXML
     private TextField insertWordTarget;
+    @FXML
     private TextArea insertWordExpl;
+    @FXML
     private Label successAlert;
     private Alerts alerts = new Alerts();
     String src = "src/dictionaries.txt";
