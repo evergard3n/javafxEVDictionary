@@ -191,13 +191,16 @@ public class DictionaryManagement  {
         ObservableList<String> list = FXCollections.observableArrayList();
         dictionary.sort(new SortWords());
         for(Word w: dictionary) {
-            String target = w.getWord_Target();
-            if(target.length()<key.length()) {
-                if(target.substring(0,key.length()-1).equals(key)) {
+            String target = w.getWord_Target().toLowerCase();
+            if (target.length() >= key.length() && target.substring(0, key.length()).equals(key.toLowerCase())) {
+                {
+
                     list.add(w.getWord_Target());
-                }
+
+
+
             }
-        }
+        }}
         return list;
 
     }

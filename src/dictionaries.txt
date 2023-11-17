@@ -1,11 +1,11 @@
-Beach	Biển
-Bird	Chim
-Boat	Thuyền
-Book	Sách
-Butterfly	Bướm
-Butterfly	Bướm
-Cat	Mèo
-Chair	Ghế
+Beach  Biển
+Bird  Chim
+Boat  Cristiano Ronaldo
+Book  Sách
+Butterfly  Bướm
+Butterfly  Bướm
+Cat  Mèo
+Chair  Ghế
 Dog  Chó
 Door  Cửa
 Flower  Hoa

@@ -143,7 +143,7 @@
                     <children>
                         <Pane layoutX="10.0" prefHeight="72.0" prefWidth="254.0" styleClass="title" stylesheets="@../Utils/style.css">
                      <children>
-                                <Label fx:id="headerList" layoutX="38.0" layoutY="13.0" prefHeight="46.0" prefWidth="230.0" text="Các kết quả liên quan" textFill="#2a4878">
+                                <Label fx:id="headerList" alignment="CENTER" layoutX="12.0" layoutY="13.0" prefHeight="46.0" prefWidth="230.0" text="Các kết quả liên quan" textFill="#2a4878">
                                     <font>
                                         <Font name="Google Sans Bold" size="16.5" />
                                     </font>
