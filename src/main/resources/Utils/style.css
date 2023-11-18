@@ -12,6 +12,7 @@
     -fx-background-radius: 5;
     -fx-border-radius: 5;
 }
+
 .container-dropshadow{
     -fx-background-color:  #fff;
     -fx-background-radius: 5;
@@ -91,6 +92,15 @@
     -fx-background-radius: 5;
     -fx-border-radius: 5;
     -fx-background-color: #f8f8f8;
+    -fx-border: none;
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(three-pass-box, #718093, 2, 0, 0, 1) ;
+}
+.game-select-button{
+    -fx-padding:0;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-background-color: #fff;
     -fx-border: none;
     -fx-background-insets: 0;
     -fx-effect: dropshadow(three-pass-box, #718093, 2, 0, 0, 1) ;

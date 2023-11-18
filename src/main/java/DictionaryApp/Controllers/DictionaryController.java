@@ -16,6 +16,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DictionaryController implements Initializable {
+
+
     @Override
     public void initialize( URL url , ResourceBundle resourceBundle ) {
 
@@ -30,6 +32,12 @@ public class DictionaryController implements Initializable {
             @Override
             public void handle( ActionEvent event ) {
                 showComponent("/Views/AdditionGui.fxml");
+            }
+        });
+        gameBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle( ActionEvent event ) {
+                showComponent("/Views/GameSwitch.fxml");
             }
         });
 //        translateBtn.setOnAction(new EventHandler<ActionEvent>() {
@@ -64,11 +72,22 @@ public class DictionaryController implements Initializable {
         }
     }
 
+    private static final class InstanceHolder {
+        private static final DictionaryController instance = new DictionaryController();
+    }
+
+    public static DictionaryController getInstance() {
+        return InstanceHolder.instance;
+    }
+    @FXML
+    public AnchorPane getContainer() {
+        return container;
+    }
     @FXML
     private Tooltip tooltip1, tooltip2, tooltip3;
 
     @FXML
-    private Button addWordBtn, translateBtn, searchWordBtn, closeBtn;
+    private Button addWordBtn, translateBtn, searchWordBtn, closeBtn, gameBtn;
 
     @FXML
     private AnchorPane container;

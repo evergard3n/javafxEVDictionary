@@ -79,5 +79,23 @@
                 </ImageView>
          </graphic>
         </Button>
+      <Button fx:id="gameBtn" alignment="BASELINE_LEFT" contentDisplay="GRAPHIC_ONLY" layoutX="3.0" layoutY="208.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="54.0" styleClass="menu-item" stylesheets="@../Utils/style.css" text="    Translate">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <tooltip>
+            <Tooltip fx:id="tooltip31" text="Phiên dịch" />
+         </tooltip>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/icons/game-console.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
     </children>
 </AnchorPane>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DictionaryApp.Controllers.MultipleChoiceController">
+   <children>
+      <Label fx:id="questionLabel" alignment="TOP_LEFT" layoutX="29.0" layoutY="54.0" prefHeight="87.0" prefWidth="570.0" text="Test">
+         <font>
+            <Font size="26.0" />
+         </font></Label>
+      <Button fx:id="choice1" layoutX="334.0" layoutY="252.0" prefHeight="87.0" prefWidth="174.0" styleClass="edit-button" stylesheets="@../Utils/style.css" />
+      <Button fx:id="choice2" layoutX="92.0" layoutY="252.0" prefHeight="87.0" prefWidth="174.0" styleClass="edit-button" stylesheets="@../Utils/style.css" />
+      <Button fx:id="choice3" layoutX="334.0" layoutY="142.0" prefHeight="87.0" prefWidth="174.0" styleClass="edit-button" stylesheets="@../Utils/style.css" />
+      <Button fx:id="choice4" layoutX="92.0" layoutY="142.0" prefHeight="87.0" prefWidth="174.0" styleClass="edit-button" stylesheets="@../Utils/style.css" />
+      <Button fx:id="nextBtn" layoutX="458.0" layoutY="355.0" mnemonicParsing="false" styleClass="add-button" stylesheets="@../Utils/style.css" text="Button" />
+      <Button fx:id="returnBtn" layoutX="15.0" layoutY="14.0" mnemonicParsing="false" prefHeight="16.0" prefWidth="89.0" styleClass="container" stylesheets="@../Utils/style.css" text="Quay lại" textFill="#2a4878">
+         <font>
+            <Font name="Google Sans Bold" size="12.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="16.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Utils/icons/keyboard_arrow_left_FILL0_wght400_GRAD0_opsz24.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label fx:id="scoreLabel" layoutX="478.0" layoutY="13.0" prefHeight="26.0" prefWidth="79.0" stylesheets="@../Utils/style.css" text=" Score">
+         <font>
+            <Font name="Google Sans Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
