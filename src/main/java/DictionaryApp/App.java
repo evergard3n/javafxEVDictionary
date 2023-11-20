@@ -12,13 +12,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+
+import java.util.Dictionary;
 import java.util.Objects;
 
 
 public class App extends Application {
     public static void main(String[] args) {
-        DictionaryManagement.insertFromFile("src/dictionaries.txt");
-        System.out.println(DictionaryUtils.showAllWords());
+        DictionaryManagement.insertFromFile("src/main/resources/Utils/data.txt");
+        System.out.println(DictionaryManagement.numberOfWords());
         launch(args);
     }
     private double xOffset = 0;

@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Word {
     private String word_Target;
     private String word_explain;
+    public Word() {}
 
     public String getWord_Target() {
         return word_Target;

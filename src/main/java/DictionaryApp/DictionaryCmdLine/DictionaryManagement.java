@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 import static DictionaryApp.DictionaryCmdLine.Dictionary.dictionary;
 
+
 public class DictionaryManagement  {
 
 //    public String wordSearch(String word_Target) {
@@ -138,9 +139,49 @@ public class DictionaryManagement  {
         exportToFile(src);
     }
 
-
+    public static int numberOfWords() {
+        return dictionary.size();
+    }
     /**Insert from file*/
     public static void insertFromFile(String src) {
+        try {
+            FileReader fileReader = new FileReader(src);
+            BufferedReader buf = new BufferedReader(fileReader);
+            //store first value of english word
+            String englishWord = buf.readLine();
+            englishWord = englishWord.replace("|" , "");
+            String line;
+
+            while ((line = buf.readLine()) != null) {
+                Word word = new Word();
+                word.setWord_Target(englishWord.trim());
+                // initialize meaning
+                String meaning = line + "\n";
+                while ((line = buf.readLine()) != null) {
+                    if (!line.startsWith("|")) {
+                        if(line.contains("!")) {
+                            line = line.replace("!", "Ví dụ: ");
+                        }
+                        meaning += line + "\n";
+                    }
+
+                    else {
+                        englishWord = line.replace("|" , "");
+                        break;
+                    }
+                }
+                word.setWord_explain(meaning.trim());
+                dictionary.add(word);
+            }
+            // close file
+            buf.close();
+        } catch (IOException e) {
+            System.out.println("An error occur with file: " + e);
+        } catch (Exception e) {
+            System.out.println("Something went wrong: " + e);
+        }
+    }
+    public void insertFromFileSpecial (String src, Dictionary dict) {
         try {
             File file = new File(src);
             Scanner scnF = new Scanner(file);
@@ -150,7 +191,8 @@ public class DictionaryManagement  {
                 String[] stack = line.split("[ \\t]+");
                 if(stack.length == 2) {
                     Word newWord = new Word(stack[0],stack[1]);
-                    dictionary.add(newWord);
+                    dict.add(newWord);
+
                 }
                 else {
                     System.err.println("Invalid line format: " + line);

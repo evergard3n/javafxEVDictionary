@@ -16,6 +16,10 @@ import static DictionaryApp.DictionaryCmdLine.Dictionary.dictionary;
 import DictionaryApp.DictionaryCmdLine.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 
 public class SearchController implements Initializable{
     @FXML
@@ -100,6 +104,7 @@ public class SearchController implements Initializable{
                 return;
             }
             englishWord.setText(dictionary.get(indexOfSelectedWord).getWord_Target());
+
             explanation.setText(dictionary.get(indexOfSelectedWord).getWord_explain());
             // update status
             headerOfExplanation.setVisible(true);
@@ -182,4 +187,22 @@ public class SearchController implements Initializable{
         englishWord.setText(dictionary.get(index).getWord_Target());
         explanation.setText(dictionary.get(index).getWord_explain());
     }
+//    private TextFlow createTextFlow(String input) {
+//        TextFlow textFlow = new TextFlow();
+//
+//        // Tách nội dung thành các dòng
+//        String[] lines = input.split("\n");
+//
+//        // Thêm Text vào TextFlow với kiểu chữ in nghiêng cho các dòng bắt đầu bằng "!"
+//        for (String line : lines) {
+//            Text text = new Text(line);
+//            if (line.startsWith("!")) {
+//                text.setFont(Font.font("Arial", FontPosture.ITALIC, 14));
+//            }
+//            textFlow.getChildren().add(text);
+//            textFlow.getChildren().add(new Text("\n"));
+//        }
+//
+//        return textFlow;
+//    }
 }

@@ -2,9 +2,10 @@ package DictionaryApp.DictionaryCmdLine;
 
 import java.util.*;
 
-public class Dictionary {
+public class Dictionary extends ArrayList<Word> {
 //    public static Map<String,Word> dictionary = new LinkedHashMap<String,Word>();
     public static List<Word> dictionary = new ArrayList<Word>();
+
 
     //    How to make an instance:
 //    private static Dictionary instance;

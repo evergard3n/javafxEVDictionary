@@ -18,20 +18,30 @@ import java.net.URL;
 import java.util.*;
 
 import static DictionaryApp.DictionaryCmdLine.Dictionary.dictionary;
+import DictionaryApp.DictionaryCmdLine.Dictionary;
 
 public class MultipleChoiceController implements Initializable {
     private static final int numberOfQuestions = 5;
-    private int questionIndex = 1, score = 0;
+    private int questionIndex = 1, score = 0, i;
     private String defination, answer;
     @FXML
     private Label questionLabel, scoreLabel;
     @FXML
     private Button choice1, choice2, choice3, choice4, returnBtn, nextBtn;
     private boolean checking = false, correctAns;
+    private ArrayList<Button> b = new ArrayList<>();
+    private Dictionary dict = new Dictionary();
+    private DictionaryManagement dictm = new DictionaryManagement();
+
 
     private HashSet<Word> previousAnswers = new HashSet<>();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        b.add(choice1);
+        b.add(choice2);
+        b.add(choice3);
+        b.add(choice4);
+        dictm.insertFromFileSpecial("src/dictionaries.txt",dict);
         returnBtn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -104,9 +114,9 @@ public class MultipleChoiceController implements Initializable {
     }
 
     private void generateQuestion() {
-        Word w = dictionary.get(getRandomIndex(dictionary.size()));
+        Word w = dict.get(getRandomIndex(dict.size()));
         while(previousAnswers.contains(w)) {
-            w = dictionary.get(getRandomIndex(dictionary.size()));
+            w = dict.get(getRandomIndex(dict.size()));
         }
         previousAnswers.add(w);
         defination = w.getWord_explain();
@@ -115,33 +125,33 @@ public class MultipleChoiceController implements Initializable {
 
     private void displayQuestion() {
 
-        HashSet<String> thisQuestionChoices = new HashSet<>();
+        HashSet<Integer> thisQuestionChoices = new HashSet<>();
         if (questionIndex <= numberOfQuestions) {
             generateQuestion();
             questionLabel.setText(defination);
-            scoreLabel.setText("Score: " + score);
-            ArrayList<Button> b = new ArrayList<>();
-            b.add(choice1);
-            b.add(choice2);
-            b.add(choice3);
-            b.add(choice4);
-            int i = getRandomIndex(4);
+
+//            ArrayList<Button> b = new ArrayList<>();
+
+            i = getRandomIndex(4);
             b.get(i).setText(answer);
-            for (Button btn : b) {
+            for (int j=0;j<4;j++) {
                 String temp;
-                if (btn != b.get(i)) {
-                    temp = dictionary.get(getRandomIndex(dictionary.size())).getWord_Target();
-                    while (thisQuestionChoices.contains(temp)) {
-                        temp = dictionary.get(getRandomIndex(dictionary.size())).getWord_Target();
+                if (j!=i) {
+                    // temp = dictionary.get(getRandomIndex(dictionary.size())).getWord_Target();
+                    int randIndex = getRandomIndex(dict.size());
+                    while (thisQuestionChoices.contains(randIndex)) {
+                        // temp = dictionary.get(getRandomIndex(dictionary.size())).getWord_Target();
+                        randIndex = getRandomIndex(dict.size());
                     }
-                    thisQuestionChoices.add(temp);
-                    btn.setText(temp);
+                    thisQuestionChoices.add(randIndex);
+                    b.get(j).setText(dict.get(randIndex).getWord_Target());
                 }
             }
 
 
         } else {
             questionLabel.setText("Game Over. Your score: " + score);
+            scoreLabel.setVisible(false);
             disableButtons();
         }
 
@@ -149,38 +159,16 @@ public class MultipleChoiceController implements Initializable {
 
 
 
-//    private void handleBtn(Button btn) {
-//
-//        if (checkCorrectAnswer(btn.getText())) {
-//            btn.setStyle("-fx-background-color: #1e90ff");
-//            try {
-//                Thread.sleep(2000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            btn.setStyle("-fx-background-color: #f8f8f8;");
-//            checkAnswer(btn.getText());
-//        }
-//        else {
-//            btn.setStyle("-fx-background-color: #ff0000");
-//            try {
-//                Thread.sleep(2000);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//            checkAnswer(btn.getText());
-//        }
-//    }
-
-
     private void checkAnswer(String selectedAnswer, Button btn) {
 
         checking = true;
         if (selectedAnswer.equals(answer)) {
             score++; // Correct answer, increment score
+            scoreLabel.setText("Score: " + score);
             btn.setStyle("-fx-background-color: #1e90ff");
         } else {
             btn.setStyle("-fx-background-color: #ff0000");
+            b.get(i).setStyle("-fx-background-color: #1e90ff");
         }
         setNextBtnText();
 
