@@ -18,6 +18,8 @@ import java.net.URL;
 import java.util.*;
 
 import static DictionaryApp.DictionaryCmdLine.Dictionary.dictionary;
+import static DictionaryApp.DictionaryCmdLine.DictionaryManagement.getRandomIndex;
+
 import DictionaryApp.DictionaryCmdLine.Dictionary;
 
 public class MultipleChoiceController implements Initializable {
@@ -108,10 +110,10 @@ public class MultipleChoiceController implements Initializable {
         displayQuestion();
     }
 
-    private int getRandomIndex(int i) {
-        Random random = new Random();
-        return random.nextInt(i);
-    }
+//    private int getRandomIndex(int i) {
+//        Random random = new Random();
+//        return random.nextInt(i);
+//    }
 
     private void generateQuestion() {
         Word w = dict.get(getRandomIndex(dict.size()));

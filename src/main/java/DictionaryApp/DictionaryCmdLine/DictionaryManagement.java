@@ -5,6 +5,7 @@ import javafx.collections.ObservableList;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 import static DictionaryApp.DictionaryCmdLine.Dictionary.dictionary;
@@ -117,6 +118,10 @@ public class DictionaryManagement  {
             System.out.println("No such word exists!");
         }
     }
+    public static int getRandomIndex(int i) {
+        Random random = new Random();
+        return random.nextInt(i);
+    }
     public static void deleteWordNP(int index, String src) {
         dictionary.remove(index);
         exportToFile(src);
@@ -188,7 +193,7 @@ public class DictionaryManagement  {
             while (scnF.hasNextLine()) {
                 String line = scnF.nextLine();
 
-                String[] stack = line.split("[ \\t]+");
+                String[] stack = line.split("\\t");
                 if(stack.length == 2) {
                     Word newWord = new Word(stack[0],stack[1]);
                     dict.add(newWord);

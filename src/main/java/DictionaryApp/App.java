@@ -27,7 +27,8 @@ public class App extends Application {
     private double yOffset = 0;
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Views/DictionaryGui.fxml")));
+      Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Views/DictionaryGui.fxml")));
+ //      Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/Views/HangManGui.fxml")));
         stage.setTitle("Dictionary app");
         stage.initStyle(StageStyle.TRANSPARENT);
 

@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DictionaryApp.Controllers.MultipleChoiceHelper">
+<AnchorPane prefHeight="530.0" prefWidth="821.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DictionaryApp.Controllers.MultipleChoiceHelper">
    <children>
       <Button fx:id="returnBtn" layoutX="25.0" layoutY="26.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="98.0" styleClass="container" stylesheets="@../Utils/style.css" text="Quay lại" textFill="#2a4878">
          <font>

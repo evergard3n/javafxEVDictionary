@@ -22,7 +22,7 @@ public class AdditionController implements Initializable {
     @FXML
     private Label successAlert;
     private Alerts alerts = new Alerts();
-    String src = "src/dictionaries.txt";
+    String src = "src/main/resources/utils/data.txt";
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
